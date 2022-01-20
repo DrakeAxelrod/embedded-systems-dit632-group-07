@@ -1,0 +1,14 @@
+// (C) Drake Axelrod, Sicily Brannen, Vernita Gouws, group: 7 (2022)
+// Work package 0
+// Exercise 2
+// Submission code: XXXXXX (provided by your TA-s)
+
+// Inclusion of header file for standard input/output
+#include <stdio.h>
+
+// Parameters: # of args, array for the args
+void main (int argc, char *argv[]) {
+
+    // Prints a string to the console with the supplied arg
+    printf("Hello World! - I'm %s! ", argv[1]);
+}
