@@ -1,7 +1,7 @@
 // (C) Drake Axelrod, group: 07 (2022)
 // Work package 0
 // Exercise 1
-// Submission code: XXXXXX (provided by your TA-s)
+// Submission code : 39CQFR
 #include <stdio.h>
 /**
  *  Main function in the program, one argument supported
@@ -13,7 +13,7 @@
 int main(int argc, char *argv[]) {
 
   // Print a string to the console
-  printf("%s - I'm %s!", "Hello World",
+  printf("%s - I'm %s!", "Hello World\n",
          argv[1]); // says hello to the 2nd argument provided (first arg is the
                    // filename)
   return 0;

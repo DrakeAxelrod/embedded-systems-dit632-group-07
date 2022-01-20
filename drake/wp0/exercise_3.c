@@ -1,7 +1,7 @@
 // (C) Drake Axelrod, group: 07 (2022)
 // Work package
 // Exercise
-// Submission code : XXXXXX(provided by your TA - s)
+// Submission code : 39CQFR
 #include <stdio.h>
 #include <string.h>
 
@@ -43,5 +43,5 @@ void help() {
   printf("\nFlags:");
   printf("\n     -h, --help         display this help message.");
   printf("\nExample:");
-  printf("\n     exercise_3 <argument>");
+  printf("\n     exercise_3 <argument>\n");
 }
