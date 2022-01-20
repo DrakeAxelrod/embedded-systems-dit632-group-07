@@ -14,7 +14,8 @@ char *rotword(char *word, int shifts);
 
 /*
  * Main function in the program,
- * @params none
+ * @params argc (number of args provided 0 is file name)
+ * @params *argv[] (pointer to args)
  * @return int (exit code)
  */
 int main(int argc, char *argv[])
