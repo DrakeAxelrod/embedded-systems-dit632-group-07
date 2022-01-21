@@ -1,7 +1,7 @@
 // (C) Drake Axelrod, Sicily Brannen, Vernita Gouws, group: 7 (2022)
 // Work package 0
 // Exercise 1
-// Submission code: XXXXXX (provided by your TA-s)
+// Submission code: 39CQFR (provided by your TA-s)
 
 // Inclusion of header file for standard input/output
 #include <stdio.h>
