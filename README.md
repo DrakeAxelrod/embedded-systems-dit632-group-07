@@ -4,4 +4,4 @@
 ## Developers
 - [Drake Axelrod](https://github.com/DrakeAxelrod)
 - [Vernita Gouws](https://github.com/VernitaJ)
-- [Sicily Brannen](https://github.com/a-brannen)
+- [S. A. Brannen](https://github.com/a-brannen)
