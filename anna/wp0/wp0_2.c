@@ -11,7 +11,7 @@
 int main (int argc, char *argv[]) {
 
     // Prints a string to the console with the supplied arg
-    printf("Hello World! - I'm %s! ", argv[1]);
+    printf("Hello World! - I'm %s!", argv[1]);
     // Exit code
     return 0;
 }
