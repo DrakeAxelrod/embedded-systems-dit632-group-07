@@ -2,9 +2,9 @@
 // Work package 1
 // Exercise 5
 // Submission code : XXXXXX
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <stdio.h> // Header for standard input/output functions
+#include <stdlib.h> // Header for standard library functions
+#include <time.h> // Header for date/time operations
 
 #define MAX 100      // defines the maximum number of the values in the table
 #define MAXNUMBER 20 // defines the maximum value of random numbers
