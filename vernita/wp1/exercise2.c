@@ -23,6 +23,9 @@ void encrypt(int argc, char *argv[]) // function to encrypt
 
     char *a = argv[1];                        // create pointer to command line argument for encryption amount
     int amount = atoi(a);                     // get the integer from the character pointer
+    if (amount == *a){
+        printf("heyy well done");
+    }
 
     while (str[i] != '\0') // while loop continues until end of the user's input string
     {
