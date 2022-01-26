@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
     scanf("%s", &answer); // get the answer
   } while (answer == 'y'); // continue loop while answer is 'y'
 
-  return 0;
+  return 0; // exit program
 }
 
 /* function to initiate the guessing game */
