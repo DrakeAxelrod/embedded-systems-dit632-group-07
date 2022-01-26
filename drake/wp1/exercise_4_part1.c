@@ -31,14 +31,16 @@ int main(int argc, char *argv[]) {
     //   printf("failed on equality");
     // }
   } else {
-    printf("must provide one arg\n");
+    printf("Please provide one arg. Enter 'h' for help.\n");
   }
   // successful execution return code
   return 0;
 }
 
 /* function to display help to the user when required */
-void help() { printf("helpful info\n"); }
+void help() { 
+  printf("Program to convert decimal to binary, and binary to hexadecimal. Enter one argument - a positive decimal number.\nExample: dec2bin 250 | bin2hec \n"); //
+}
 
 
 /* function to convert the decimal value to a binary representation */
