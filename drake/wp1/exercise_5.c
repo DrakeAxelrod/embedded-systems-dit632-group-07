@@ -66,7 +66,9 @@ void count_frequency(int *tab, int *freq) {
 /* method to create the histogram that will be displayed as
 output in the console showing each number and its occurrence. */
 void draw_histogram(int *freq) {
-  for (int i = 0; i < MAXNUMBER; i++) {
+  for (int i = 0; i < MAXNUMBER;
+       i++) { // loop through each number that could occur according to the
+              // MAXNUMBER value set in the program
     if (freq[i] != 0) { // check if the number occurs in the table of random
                         // numbers, if not, continue to next number
       printf("%d ", i); // print the number
