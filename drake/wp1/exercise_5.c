@@ -1,34 +1,38 @@
+// (C) Drake Axelrod, Sicily Ann Brannen, Vernita Gouws, group: 07 (2022)
+// Work package 1
+// Exercise 5
+// Submission code : XXXXXX
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-#define MAX 100      // Defines the maximum number of the values in the table
-#define MAXNUMBER 20 // Defines the maximum value of random numbers
-// ------ Function declarations ----------
-// This function generates a set of random numbers
-// and fills the table *tab with these numbers
+#define MAX 100      // defines the maximum number of the values in the table
+#define MAXNUMBER 20 // defines the maximum value of random numbers
+
+// function declarations
 void create_random(int *tab);
-// This function takes the *tab of random numbers
-// and creates a table with the frequency counts for these numbers
 void count_frequency(int *tab, int *freq);
-// This function takes the frequency count table
-// and draws a histogram of the values in that frequency table
 void draw_histogram(int *freq);
-// ------ Function definitions ----------
 int rand_int();
-// ------ Main --------------------------
-// The main entry point for the program
-//
-// If you choose to go for the optional part
-// Please modify it accordingly
+/**
+ * main function of program. entry point for the program which calls the other
+ * functions.
+ * @return int which is the exit code
+ */
 int main(void) {
   // random seed init
   srand(time(0));
-  int table[MAX], n;
+  // initialize a table to fill with random numbers
+  int table[MAX];
+  // initialize a frequency array to count the occurances within table
   int frequency[MAXNUMBER];
   create_random(table);
+  // counts the frequency of occurances of each number in table
   count_frequency(table, frequency);
+  // draw a histogram to represent the frequency of the numbers within table
   draw_histogram(frequency);
+  // exit code
+  return 0;
 }
 
 int rand_int() {

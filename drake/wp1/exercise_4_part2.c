@@ -1,7 +1,7 @@
-// (C) Drake Axelrod, group: 07 (2022)
-// Work package
-// Exercise
-// Submission code : XXXXXX(provided by your TA - s)
+// (C) Drake Axelrod, Sicily Ann Brannen, Vernita Gouws, group: 07 (2022)
+// Work package 1
+// Exercise 5
+// Submission code : XXXXXX
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,13 +16,12 @@ int valid_int(char *str);
  * @params none
  * @return int (exit code)
  */
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
   char *buffer, *input;
   input = fgets(buffer, 256, stdin);
   int n = sizeof(input) / sizeof(input[0]);
   printf("size of input: %d\n", n);
-  //printf("a%s\n", stdin);
+  // printf("a%s\n", stdin);
   convert(input);
   //   int result = valid_int(argv[1]);
   //   // check if number is float also
@@ -45,12 +44,11 @@ int main(int argc, char *argv[])
 
 void help() { printf("helpful info\n"); }
 
-void convert(char *in)
-{
-  //char *CHARS = "0123456789ABCDEF";
-  //int value = strtol(in, NULL, 2);
-  // char *one = { in[0], in[1], in[2], in[3] };
-  // char *one = { in[5], in[6], in[7], in[8] };
+void convert(char *in) {
+  // char *CHARS = "0123456789ABCDEF";
+  // int value = strtol(in, NULL, 2);
+  //  char *one = { in[0], in[1], in[2], in[3] };
+  //  char *one = { in[5], in[6], in[7], in[8] };
   int value = (int)strtol(in, NULL, 2);
 
   // convert integer to hex string
@@ -70,14 +68,11 @@ void convert(char *in)
   // }
 }
 
-int valid_int(char *str)
-{
-  while (*str != '\0')
-  {
+int valid_int(char *str) {
+  while (*str != '\0') {
     // isdigit return 0 or 1 depending on if char is an int which you check with
     // 0 if 0 true else 1 false
-    if (!isdigit(*str))
-    {
+    if (!isdigit(*str)) {
       return 0;
     }
     str++;

@@ -1,7 +1,7 @@
-// (C) Drake Axelrod, group: 07 (2022)
-// Work package
-// Exercise
-// Submission code : XXXXXX(provided by your TA - s)
+// (C) Drake Axelrod, Sicily Ann Brannen, Vernita Gouws, group: 07 (2022)
+// Work package 1
+// Exercise 5
+// Submission code : XXXXXX
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
