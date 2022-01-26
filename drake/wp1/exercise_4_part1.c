@@ -11,6 +11,7 @@ typedef unsigned char byte;
 void help();
 void convert(int d);
 int valid_int(char *str);
+int get_byte(int arg);
 /*
  * Main function in the program,
  * @params none
@@ -40,11 +41,12 @@ int main(int argc, char *argv[]) {
 void help() { printf("helpful info\n"); }
 
 void convert(int d) {
-  int binary[8];
-  for (int i = 0; i < 8; i++) {
+  int size = get_byte(d);
+  int binary[size];
+  for (int i = 0; i < size; i++) {
     binary[i] = (char)(d >> i) & 1;
   }
-  for (int i = 7; i >= 0; i--) {
+  for (int i = size - 1; i >= 0; i--) {
     printf("%d", binary[i]);
   }
   printf("\n");
@@ -61,3 +63,14 @@ int valid_int(char *str) {
   }
   return 1;
 }
+
+int get_byte(int arg) {
+  int n = 0;
+  while (arg != 0) {
+    arg >>= 8;
+    n++;
+  }
+  return n * 8;
+}
+// 2^32-1
+// 9,223,372,036,854,775,807 - 64bitsystem
