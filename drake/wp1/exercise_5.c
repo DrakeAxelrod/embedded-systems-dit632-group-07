@@ -47,7 +47,7 @@ void create_random(int *tab) {
 of each number in the table of random numbers */
 void count_frequency(int *tab, int *freq) {
   for (int i = 0; i < MAXNUMBER; i++) { // loop over each number in the frequency table to initialise the frequency to zero
-    freq[i] = 0;
+    freq[i] = 0; // 
   }
   for (int i = 0; i < MAX; i++) { // loop over each number in the table of random numbers to increment the frequency
     int val = tab[i]; // find the value of the number
@@ -58,7 +58,7 @@ void count_frequency(int *tab, int *freq) {
 /* method to create the histogram that will be displayed as 
 output in the console showing each number and its occurrence. */
 void draw_histogram(int *freq) {
-  for (int i = 0; i < MAXNUMBER; i++) { 
+  for (int i = 0; i < MAXNUMBER; i++) { // loop through each number that could occur according to the MAXNUMBER value set in the program
     if (freq[i] != 0) { // check if the number occurs in the table of random numbers, if not, continue to next number
       printf("%d ", i); // print the number
       for (int j = 0; j < freq[i]; j++) { // for each occurrence of the number
