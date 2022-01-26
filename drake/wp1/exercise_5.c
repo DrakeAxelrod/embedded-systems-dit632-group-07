@@ -40,30 +40,35 @@ int rand_int() {
   return (rand() % (MAXNUMBER + 1));
 }
 
+/* method to fill the table with random numbers */
 void create_random(int *tab) {
-  for (int i = 0; i < MAX; i++) {
-    tab[i] = rand_int();
+  for (int i = 0; i < MAX; i++) { // loop according to the MAX amount specified in the program
+    tab[i] = rand_int(); // set the number to a random value using the rand_int() function
   }
 }
 
+/* method to count the frequency of occurrences 
+of each number in the table of random numbers */
 void count_frequency(int *tab, int *freq) {
-  for (int i = 0; i < MAXNUMBER; i++) {
+  for (int i = 0; i < MAXNUMBER; i++) { // loop over each number in the frequency table to initialise the frequency to zero
     freq[i] = 0;
   }
-  for (int i = 0; i < MAX; i++) {
-    int val = tab[i];
-    freq[val]++;
+  for (int i = 0; i < MAX; i++) { // loop over each number in the table of random numbers to increment the frequency
+    int val = tab[i]; // find the value of the number
+    freq[val]++; // increment frequency of the number
   }
 }
 
+/* method to create the histogram that will be displayed as 
+output in the console showing each number and its occurrence. */
 void draw_histogram(int *freq) {
-  for (int i = 0; i < MAXNUMBER; i++) {
-    if (freq[i] != 0) {
-      printf("%d ", i);
-      for (int j = 0; j < freq[i]; j++) {
-        printf("x");
+  for (int i = 0; i < MAXNUMBER; i++) { 
+    if (freq[i] != 0) { // check if the number occurs in the table of random numbers, if not, continue to next number
+      printf("%d ", i); // print the number
+      for (int j = 0; j < freq[i]; j++) { // for each occurrence of the number
+        printf("x"); // print the number's occurrence
       }
-      printf("\n");
+      printf("\n"); // next line
     }
   }
 }
