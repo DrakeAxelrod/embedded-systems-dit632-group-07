@@ -43,17 +43,23 @@ void create_random(int *tab) {
 }
 
 void count_frequency(int *tab, int *freq) {
+  for (int i = 0; i < MAXNUMBER; i++) {
+    freq[i] = 0;
+  }
   for (int i = 0; i < MAX; i++) {
     int val = tab[i];
-    freq[val] += 1;
+    freq[val]++;
   }
 }
 
 void draw_histogram(int *freq) {
   for (int i = 0; i < MAXNUMBER; i++) {
-    printf("%d", i);
     if (freq[i] != 0) {
-      printf("%d %d\n", i, freq[i]);
+      printf("%d ", i);
+      for (int j = 0; j < freq[i]; j++) {
+        printf("x");
+      }
+      printf("\n");
     }
   }
 }
