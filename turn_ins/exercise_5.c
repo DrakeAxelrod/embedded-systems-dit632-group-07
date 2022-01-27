@@ -44,16 +44,14 @@ int rand_int() {
 void create_random(int *tab) {
   for (int i = 0; i < MAX;
        i++) { // loop according to the MAX amount specified in the program
-    tab[i] = rand_int(); // set the number to a random value using the
-                         // rand_int() function
+    tab[i] = rand_int(); // set the number to a random value using the rand_int() function
   }
 }
 
 /* method to count the frequency of occurrences
 of each number in the table of random numbers */
 void count_frequency(int *tab, int *freq) {
-  for (int i = 0; i < MAXNUMBER;
-       i++) {    // loop over each number in the frequency table
+  for (int i = 0; i < MAXNUMBER; i++) { // loop over each number in the frequency table
     freq[i] = 0; // initialise the frequency to zero
   }
   for (int i = 0; i < MAX; i++) { // loop over each number in the table of

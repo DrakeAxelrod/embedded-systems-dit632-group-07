@@ -1,4 +1,4 @@
-// (C) Drake Axelrod, group: 07 (2022)
+// (C) Vernita Gouws, Sicily Brannen, Drake Axelrod, Group: 7 (2022)
 // Work package 1
 // Exercise 1
 // Submission code: XXXXXX (provided by your TA-s)
