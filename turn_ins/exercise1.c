@@ -29,7 +29,7 @@ int main(void)
     // variable to store user input, 256 is arbitrarly chosen
     char option[256];
     // prompt the user to choose a number between 1 and 5
-    printf("\nPlease type in a number between 1-5: ");
+    printf("Please type in a number between 1-5: ");
     // read input from console (safer then scanf)
     fgets(option, sizeof(option), stdin);
 
@@ -39,13 +39,13 @@ int main(void)
     if (choice >= 0 && choice <= 4)
     {
       // print the relevant sentences inregards to the chosen option
-      printf("%s", sentence_array[choice]);
+      printf("%s\n", sentence_array[choice]);
     }
     // else: if choices are outside the valid range
     else
     {
       // provide context for why the program could not run
-      printf("Invalid option you must choose a number between 1-5");
+      printf("\nInvalid option you must choose a number between 1-5\n");
       // exit code to terminate
       return 1;
     }
