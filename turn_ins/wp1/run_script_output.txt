@@ -1,0 +1,85 @@
+compiling bin2hec.c
+compiling dec2bin.c
+compiling exercise1.c
+compiling exercise2.c
+compiling exercise3.c
+compiling exercise5.c
+============================================================================================
+running exercise 1
+============================================================================================
+Please type in a number between 1-5: You know you're in love when you can't fall asleep because reality is finally better than your dreams.
+Please type in a number between 1-5: 
+Invalid option you must choose a number between 1-5
+============================================================================================
+running exercise 2
+============================================================================================
+Enter the string to encrypt.
+
+The encrypted str is: uryyb
+Enter the string to encrypt.
+
+The encrypted str is: jbeyq
+Enter the string to encrypt.
+
+The encrypted str is: oNaNan
+Enter the string to encrypt.
+============================================================================================
+running exercise 3
+============================================================================================
+Guess the number.
+Wrong format. Only numbers between 1-100 (inclusive) accepted.
+Guess the number.
+Your guess is too low. You have 5 guesses left
+Guess the number.
+Your guess is too low. You have 4 guesses left
+Guess the number.
+Your guess is too high. You have 3 guesses left
+Guess the number.
+Your guess is too low. You have 2 guesses left
+Guess the number.
+Your guess is too low. You have 1 guesses left
+Guess the number.
+Your guess is too low. You have 0 guesses left
+You ran out of guesses! Try again
+
+Would you like to play again? y/n
+============================================================================================
+running exercise 4
+============================================================================================
+running dec2bin without pipe
+11111111
+0000000100000000
+1111111111111111
+1111111111111111
+piping output of dec2bin to bin2hec
+ff
+100
+ffff
+ffff
+running bin2hec without pipe
+ff
+100
+ffff
+ffff
+============================================================================================
+running exercise 5
+============================================================================================
+0 xxxxx
+1 xxxxxxx
+2 xxxx
+3 xxxx
+4 xxx
+5 xxxxx
+6 xxxx
+7 xxxxxx
+8 xxxxx
+9 xxxxx
+10 xxxxxx
+11 xxxxx
+12 xxxxxxxxx
+13 xxxx
+15 xxxxxxx
+16 xxxx
+17 xxxxxx
+18 x
+19 xxxxx
