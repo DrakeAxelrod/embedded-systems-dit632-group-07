@@ -2,8 +2,8 @@
 // Work package 1
 // Exercise 1
 // Submission code: XXXXXX (provided by your TA-s)
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h> // Header for standard input/output
+#include <stdlib.h> // Header for general purpose functions (standard library)
 
 // Dr. Seuss quotes. (store the sentence options in an array for easy access)
 char *sentence_array[5] = {
@@ -21,28 +21,33 @@ char *sentence_array[5] = {
  * @params none
  * @return int (exit code)
  */
-int main(void) {
-  // while loop to exit on failure to type 1-5
+int main(void)
+{
+  // initiates a while loop
+  while (1)
+  {
+    // variable to store user input, 256 is arbitrarly chosen
+    char option[256];
+    // prompt the user to choose a number between 1 and 5
+    printf("\nPlease type in a number between 1-5: ");
+    // read input from console (safer then scanf)
+    fgets(option, sizeof(option), stdin);
 
-  // variable to store user input, 256 is arbitrarly chosen
-  char option[256];
-  // prompt the user to choose a number between 1 and 5
-  printf("Please type in a number between 1-5: ");
-  // read input from console (safer then scanf)
-  fgets(option, sizeof(option), stdin);
-
-  // string/char ptr to int (-1 is to account for 0 indexing)
-  int choice = atoi(option) - 1;
-
-  if (choice < 6 && choice > 0) {
-    // print the relevant sentences inregards to the chosen option
-    printf("%s", sentence_array[choice]);
-    // successful execution code
-    return 0;
-  } else {
-    // Provide context for why the program could not run
-    printf("Invalid option you must choose a number between 1-5");
-    // failure exit code
-    return 1;
+    // string/char ptr to int (-1 is to account for 0 indexing)
+    int choice = atoi(option) - 1;
+    // for valid choices to be between 1 and 5
+    if (choice >= 0 && choice <= 4)
+    {
+      // print the relevant sentences inregards to the chosen option
+      printf("%s", sentence_array[choice]);
+    }
+    // else: if choices are outside the valid range
+    else
+    {
+      // provide context for why the program could not run
+      printf("Invalid option you must choose a number between 1-5");
+      // exit code to terminate
+      return 1;
+    }
   }
 }
