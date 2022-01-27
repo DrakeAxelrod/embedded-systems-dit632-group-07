@@ -6,6 +6,7 @@
 #include <stdlib.h>         // for atoi
 void encrypt(int, char **); // define the function to encrypt
 
+// TODO EOL
 void main(int argc, char *argv[]) // main function
 {
     while (1)

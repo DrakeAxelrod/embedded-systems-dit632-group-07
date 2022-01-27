@@ -22,6 +22,8 @@ char *sentence_array[5] = {
  * @return int (exit code)
  */
 int main(void) {
+  // while loop to exit on failure to type 1-5
+
   // variable to store user input, 256 is arbitrarly chosen
   char option[256];
   // prompt the user to choose a number between 1 and 5
