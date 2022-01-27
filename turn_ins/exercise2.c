@@ -1,7 +1,7 @@
 // (C) Vernita Gouws, Sicily Brannen, Drake Axelrod, Group: 7 (2022)
 // Work package 0
 // Exercise 2
-// Submission code: 39CQFR
+// Submission code: 
 #include <stdio.h>
 #include <stdlib.h>         // for atoi
 void encrypt(int, char **); // define the function to encrypt
@@ -29,18 +29,18 @@ void encrypt(int argc, char *argv[]) // function to encrypt
 
     while (str[i] != '\0') // while loop continues until end of the user's input string
     {
-        if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')) // checks if character is valid alphabet letters
+        if ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z')) // checks if character is valid alphabet letters
         {
             if (str[i] < 'a' && str[i] > 'Z' - amount || str[i] <= 'z' && str[i] > 'z' - amount) // checks if character's will fall outside of alphabet ASCII numbers after encryption
             {
-                str[i] -= 26 - amount; // equation to ensure encryption stays in the alphabet range
+                str[i] -= 26 - amount; // equation to ensure encryption stays in the lowercase of uppercase alphabet range respectively
             }
             else
             {
-                str[i] += amount; // equation for simple encryption
+                str[i] += amount; // equation for simple encryption using user's argument
             }
         }
-        i++; // increment i to check next characted in while loop
+        i++; // increment i to check next character in while loop
     }
     printf("\nThe encrypted str is: %s\n\n", str); // print string after encryption
 }

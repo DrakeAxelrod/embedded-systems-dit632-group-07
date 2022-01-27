@@ -1,6 +1,6 @@
 // (C) Vernita Gouws, Sicily Brannen, Drake Axelrod, Group: 7 (2022)
 // Work package 0
-// Exercise 2
+// Exercise 3
 // Submission code:
 
 #include <stdio.h>
