@@ -1,7 +1,7 @@
 // (C) Drake Axelrod, Sicily Ann Brannen, Vernita Gouws, group: 07 (2022)
 // Work package 1
 // Exercise 5
-// Submission code : XXXXXX
+// Submission code : UUHT8LX7
 #include <stdio.h> // Header for standard input/output functions
 #include <stdlib.h> // Header for standard library functions
 #include <time.h> // Header for date/time operations

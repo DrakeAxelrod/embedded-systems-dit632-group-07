@@ -1,7 +1,7 @@
 // (C) Vernita Gouws, Sicily Brannen, Drake Axelrod, Group: 7 (2022)
 // Work package 1
 // Exercise 1
-// Submission code: XXXXXX (provided by your TA-s)
+// Submission code: UUHT8LX7
 #include <stdio.h> // Header for standard input/output
 #include <stdlib.h> // Header for general purpose functions (standard library)
 

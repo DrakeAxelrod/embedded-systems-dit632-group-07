@@ -29,9 +29,9 @@ running exercise 3
 Guess the number.
 Wrong format. Only numbers between 1-100 (inclusive) accepted.
 Guess the number.
-Your guess is too low. You have 5 guesses left
+Your guess is too high. You have 5 guesses left
 Guess the number.
-Your guess is too low. You have 4 guesses left
+Your guess is too high. You have 4 guesses left
 Guess the number.
 Your guess is too high. You have 3 guesses left
 Guess the number.
@@ -64,22 +64,23 @@ ffff
 ============================================================================================
 running exercise 5
 ============================================================================================
-0 xxxxx
-1 xxxxxxx
+0 xxxx
+1 xx
 2 xxxx
-3 xxxx
-4 xxx
-5 xxxxx
+3 xxx
+4 xxxxxx
+5 xxxx
 6 xxxx
-7 xxxxxx
-8 xxxxx
-9 xxxxx
-10 xxxxxx
-11 xxxxx
-12 xxxxxxxxx
-13 xxxx
-15 xxxxxxx
-16 xxxx
+7 xxxxxxx
+8 xxxxxx
+9 xxxxxxx
+10 xxxx
+11 xxxxxxx
+12 xxx
+13 xxxxxxxxxxx
+14 xxxxxx
+15 x
+16 x
 17 xxxxxx
-18 x
-19 xxxxx
+18 xxxxx
+19 xxxx

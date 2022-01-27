@@ -1,7 +1,7 @@
 // (C) Vernita Gouws, Sicily Brannen, Drake Axelrod, Group: 7 (2022)
 // Work package 0
 // Exercise 3
-// Submission code:
+// Submission code: UUHT8LX7
 
 #include <stdio.h> // input output
 #include <stdlib.h> // rand and srand functions

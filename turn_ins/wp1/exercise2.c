@@ -1,7 +1,7 @@
 // (C) Vernita Gouws, Sicily Brannen, Drake Axelrod, Group: 7 (2022)
 // Work package 1
 // Exercise 2
-// Submission code: 
+// Submission code: UUHT8LX7
 #include <stdio.h> // for standard input/output functions
 #include <stdlib.h> // for atoi
 void encrypt(int, char **, char* str); // define the function to encrypt
