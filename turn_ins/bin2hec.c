@@ -6,8 +6,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void convert(char *in);
-int valid_bin(char *str);
+// function declarations
+void convert(char *in); // convert binary to hexidecimal
+int valid_bin(char *str); // check if input is a valid binary
 /*
  * Main function in the program,
  * @params argc and argv are passed
@@ -16,8 +17,8 @@ int valid_bin(char *str);
 int main(int argc, char *argv[])
 {
   char buffer[40], *input; // create buffer array to support input for piping. create input pointer for use in convert() function
-  if (argc == 1)
-  {                                   // if there is no argument
+  if (argc == 1)           // if there is no argument
+  {
     input = fgets(buffer, 40, stdin); // get input from stdin (command line)
   }
   else

@@ -8,6 +8,12 @@ void encrypt(int, char **, char* str); // define the function to encrypt
 
 void main(int argc, char *argv[]) // main function
 {
+  // exit if no argument or too many args were provided
+  if (argc !=2) { // check if we dont have 2 args
+    printf("Must provide one argument, which is the amount of shifts for the characters"); // error message
+    return 1; // exit code (error)
+  }
+  // arbitrary size array to hold input
   char str[256];
   printf("Enter the string to encrypt.\n"); // print to console to ask for user input
   while (scanf("%s", str) != EOF) // loop continues until user ends the program via the command line

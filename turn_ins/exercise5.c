@@ -11,8 +11,11 @@
 
 // function declarations
 void create_random(int *tab);
+// get the frequency of each number
 void count_frequency(int *tab, int *freq);
+// draw a historgram representing the num of occurences of each number
 void draw_histogram(int *freq);
+// get a random int from 0-MAXNUMBER
 int rand_int();
 /**
  * main function of program. entry point for the program which calls the other
