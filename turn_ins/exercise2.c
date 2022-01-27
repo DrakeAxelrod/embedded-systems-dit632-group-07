@@ -6,7 +6,7 @@
 #include <stdlib.h> // for atoi
 void encrypt(int, char **, char* str); // define the function to encrypt
 
-void main(int argc, char *argv[]) // main function
+int main(int argc, char *argv[]) // main function
 {
   // exit if no argument or too many args were provided
   if (argc !=2) { // check if we dont have 2 args

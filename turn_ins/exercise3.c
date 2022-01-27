@@ -3,11 +3,15 @@
 // Exercise 3
 // Submission code:
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <stdio.h> // input output
+#include <stdlib.h> // rand and srand functions
+#include <time.h> // for the random seed
+
+// generate random number
 int rand(void);
+// function that runs the game loop
 void guessing();
+// max number of guesses
 int MAXNUMBER = 6;
 
 /*
