@@ -2,7 +2,7 @@
 // Work package 1
 // Exercise 2
 // Submission code: 
-#include <stdio.h>
+#include <stdio.h> // for standard input/output functions
 #include <stdlib.h> // for atoi
 void encrypt(int, char **, char* str); // define the function to encrypt
 
@@ -14,7 +14,7 @@ void main(int argc, char *argv[]) // main function
     return 1; // exit code (error)
   }
   // arbitrary size array to hold input
-  char str[256];
+  char str[256]; // variable to store user input, 256 is arbitrarly chosen
   printf("Enter the string to encrypt.\n"); // print to console to ask for user input
   while (scanf("%s", str) != EOF) // loop continues until user ends the program via the command line
   {
@@ -38,7 +38,7 @@ void encrypt(int argc, char *argv[], char *str) // function to encrypt
             {
                 str[i] -= 26 - amount; // equation to ensure encryption stays in the lowercase of uppercase alphabet range respectively
             }
-            else
+            else // else condition
             {
                 str[i] += amount; // equation for simple encryption using user's argument
             }
