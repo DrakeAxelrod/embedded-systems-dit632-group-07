@@ -47,9 +47,9 @@ int main(void) {
   return 0;
 }
 
-void move(int *) {}
+void move(int *robot) {}
 
-void turn(int *) {}
+void turn(int *robot) {}
 
 int is_valid_input(char *input) {
   while (*input != '\n') {
@@ -64,4 +64,4 @@ int is_valid_input(char *input) {
   return 1; // return when input is a valid number
 }
 
-int input_loop(char *input) { if () }
+int input_loop(char *input) { return 0; }
