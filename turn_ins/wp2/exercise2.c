@@ -3,16 +3,15 @@
 // Exercise 2
 // Submission code : XXXXXX(provided by your TA - s)
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <stdio.h> // functions for standard input/output
+#include <stdlib.h> // for standard library functions (malloc, srand)
+#include <time.h> // included for the random seed function
 
 //#### Constants #####
 #define MAX 5
 
 // ##### typedefs          ####
-typedef struct q
-{
+typedef struct q{
   int number;
   struct q *next;
   struct q *prev;
@@ -20,8 +19,8 @@ typedef struct q
 
 // ##### Function declarations   #####
 
-REGTYPE *random_list(void);
-REGTYPE *add_first(REGTYPE *temp, int data);
+REGTYPE *random_list(void);         // declaration of method
+REGTYPE *add_first(REGTYPE *, int); // declaration of method
 
 //###### Main program #######
 int main(int argc, char *argv[])
@@ -30,14 +29,14 @@ int main(int argc, char *argv[])
 
   REGTYPE *act_post, *head = NULL;
 
-  srand(time(0)); //   Random seed
-  head = random_list();
-  act_post = head;
+  srand(time(0));               // random seed
+  head = random_list();         // call function to create initial list
+  head = add_first(head, 1337); // testing add_first
+  act_post = head;              // set
   while (act_post != NULL)
   {
     printf("\n Post nr %d : %d", nr++, act_post->number);
     act_post = act_post->next;
-    break;
   }
 
   // --- Free the allocated memory  ---
@@ -59,36 +58,38 @@ REGTYPE *random_list(void)
   int i = 0;
 
   REGTYPE *top, *old, *item;
-  item = (REGTYPE *)malloc(sizeof(REGTYPE));
+  top = NULL;
   while (i < MAX)
   {
-    item->next = NULL;
-    item->prev = NULL;
+    item = (REGTYPE *)malloc(sizeof(REGTYPE));
     item->number = rand() % 100 + 1;
-    // printf("%d", MAX);
-    // printf("i=%d", i);
-    if (i == 0)
+    if (top == NULL)
     {
+      item->next = NULL;
+      item->prev = NULL;
       top = item;
     }
     else
     {
-      top->next = item;
-      printf("now: %d, prev: %d", top->number, top->next->number);
-      break;
+      old = top;
+      while (old->next != NULL)
+      {
+        old = old->next;
+      }
+      item->prev = old;
+      old->next = item;
+
+      // item->prev = NULL;
+      // top->prev = item;
+      // old = top;
+      // top = item;
+      // item->next = old;
+      // old->prev = top;
+      // old->next = NULL;
+      printf("old-prev: %d, old: %d, old-next: %d\n", old->prev, old, old->next);
     }
     i++;
   }
-
-  // item top = null top = item
-  // item old = top top = item
-  // top - #1 - prev - #2 next - #1
-  // top - #2 - prev - null next - old
-  // top - #3 -
-
-  // top->prev = old;
-  // top->next = item;
-  // top->number = rand() % 100 + 1; // get a random number from the random number generator
   return (top);
 }
 
@@ -96,6 +97,10 @@ REGTYPE *random_list(void)
 
 REGTYPE *add_first(REGTYPE *temp, int data)
 {
+  REGTYPE *item = (REGTYPE *)malloc(sizeof(REGTYPE));
+  item->number = data;
+  temp->prev = item;
+  item->next = temp;
   // struct Node* newNode = GetNewNode(x);
   // if(head == NULL) {
   // 	head = newNode;
@@ -104,4 +109,5 @@ REGTYPE *add_first(REGTYPE *temp, int data)
   // head->prev = newNode;
   // newNode->next = head;
   // head = newNode;
+  return item;
 }
