@@ -121,6 +121,7 @@ int is_valid_movement(char *input)
       printf("Invalid input for movement.\nInput can only consist of 'm' for move, or 't' for turn. (With no spaces separating characters)"); // print error message to console with help for the user
       return 0;                                                                                                                               // return when input is not M/m or T/t
     }
+    input++; // iterate over string array by incrementing pointer
   }
   return 1; // return when input is valid for movement or turning (M/m T/t)
 }
@@ -156,7 +157,7 @@ void input_loop(ROBOT *robot)
 void movement(ROBOT *robot, char *movement)
 {
   int len = strlen(movement);   // get the length of the string
-  for (int i = 0; i < len; i++) // for each character in the string
+  for (int i = 0; i < len - 1; i++) // for each character in the string, minus the newline character
   {
     if (movement[i] == 't' || movement[i] == 'T') // if the input is 'T' or 't'
     {

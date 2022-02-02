@@ -1,5 +1,80 @@
+compiling code.c
+compiling decode.c
 compiling exercise1.c
 compiling exercise2.c
+compiling exercise3.c
+compiling test.c
+============================================================================================================
+exercise 1
+============================================================================================================
+
+What is the starting x coordinate: 
+What is the starting y coordinate: 
+What is the movement of the robot?
+
+x: 6 y: 19 direction: W
+
+Press 'Enter' to move the robot, or 'q' to exit
+
+What is the starting x coordinate: 
+What is the starting y coordinate: 
+What is the movement of the robot?
+
+x: 2 y: 2 direction: W
+
+Press 'Enter' to move the robot, or 'q' to exit
 ============================================================================================================
 exercise 2
 ============================================================================================================
+
+run #0
+
+ Post nr 0 : 1337
+ Post nr 1 : 87
+ Post nr 2 : 22
+ Post nr 3 : 46
+ Post nr 4 : 91
+ Post nr 5 : 53
+
+run #1
+
+ Post nr 0 : 1337
+ Post nr 1 : 52
+ Post nr 2 : 65
+ Post nr 3 : 72
+ Post nr 4 : 27
+ Post nr 5 : 81
+
+run #2
+
+ Post nr 0 : 1337
+ Post nr 1 : 59
+ Post nr 2 : 18
+ Post nr 3 : 27
+ Post nr 4 : 24
+ Post nr 5 : 78
+
+run #3
+
+ Post nr 0 : 1337
+ Post nr 1 : 11
+ Post nr 2 : 13
+ Post nr 3 : 46
+ Post nr 4 : 19
+ Post nr 5 : 65
+============================================================================================================
+exercise 3
+============================================================================================================
+============================================================================================================
+exercise 4_1
+============================================================================================================
+11111111ff
+============================================================================================================
+exercise 4_2
+============================================================================================================
+Name		Value
+engine_on	1
+gear_pos	7
+key_pos		3
+brake1		1
+brake2		1

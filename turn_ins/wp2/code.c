@@ -4,39 +4,36 @@
 // Submission code : XXXXXX(provided by your TA - s)
 
 #include <stdlib.h>
-#include <stdio.h>
+#include <stdio.h> 
 #include <string.h>
 
 typedef unsigned char byte;
 
+/* function declaration */
 void print_byte_as_bits(char val);
 
+/* main function */
 int main(int argc, char const *argv[])
 {
-  if (argc != 6)
-    return 1;
-  byte value = 0;
-  value += atoi(argv[1]) << 7;
-  value += atoi(argv[2]) << 4;
-  value += atoi(argv[3]) << 2;
-  value += atoi(argv[4]) << 1;
-  value += atoi(argv[5]);
-  printf("%x\n", value);
+  if (argc != 6)               // if there are not enough arguments
+    return 1;                  // exit the program
+  byte value = 0;              // set a byte variable and initialise it to 0
+  value += atoi(argv[1]) << 7; // bitshift the first argument and create an integer to represent the 7th binary char
+  value += atoi(argv[2]) << 4; // bitshift the second argument and create an integer to represent the 4th-6th binary chars
+  value += atoi(argv[3]) << 2; // bitshift the third argument and create an integer to represent the 3rd binary char
+  value += atoi(argv[4]) << 1; // bitshift the second argument and create an integer to represent the 2nd binary char
+  value += atoi(argv[5]);      // create an integer to represent the 1st binary char
 
-  printf("%x\n", value & 0xFF); // 1111 1111
-  printf("%x\n", value);
-  printf("%02X\n", value);
-  printf("%d\n", (int)0x97);
-  print_byte_as_bits(value);
-  unsigned char c = 255;
-  printf("Unsigned char: %hhu\n", c);
-  return 0;
+  print_byte_as_bits(value); // print the bit representation
+  printf("%x\n", value);     // print the value which will be the hex representation of the input
+  return 0;                  // exit program
 }
 
+/* function to print bits */
 void print_byte_as_bits(char val)
 {
-  for (int i = 7; 0 <= i; i--)
+  for (int i = 7; 0 <= i; i--) // for each bit in the byte
   {
-    printf("%c", (val & (1 << i)) ? '1' : '0');
+    printf("%c", (val & (1 << i)) ? '1' : '0'); // print the value
   }
 }

@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
         head = act_post->next; // set to next position as you free each this is to make sure that you free everything
         free(act_post);        // since the head is pointing to next we can free the previous head without losing the list
     }
-
+    printf("\n"); // clean up lines
     return 0; // exit code
 }
 
