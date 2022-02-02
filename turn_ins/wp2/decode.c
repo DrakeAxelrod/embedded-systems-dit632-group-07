@@ -15,7 +15,7 @@ void show_results(byte val);
 // Main function
 int main(int argc, char *argv[])
 {
-    if (argc != 2)                               // the program should only accept 1 user provided argument otherwise exist the program with an error code
+    if (argc != 2)                               // the program should only accept 1 user provided argument, otherwise exit the program with an error code
         return 1;                                // error exit code
     byte value = (int)strtol(argv[1], NULL, 16); // convert hex to decimal (in the form of a unsigned char byte)
     show_results(value);                         // display the result

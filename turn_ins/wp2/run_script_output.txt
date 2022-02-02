@@ -27,51 +27,103 @@ Press 'Enter' to move the robot, or 'q' to exit
 exercise 2
 ============================================================================================================
 
-run #0
-
- Post nr 0 : 1337
- Post nr 1 : 87
- Post nr 2 : 22
- Post nr 3 : 46
- Post nr 4 : 91
- Post nr 5 : 53
-
 run #1
 
  Post nr 0 : 1337
- Post nr 1 : 52
- Post nr 2 : 65
- Post nr 3 : 72
- Post nr 4 : 27
- Post nr 5 : 81
+ Post nr 1 : 18
+ Post nr 2 : 30
+ Post nr 3 : 54
+ Post nr 4 : 75
+ Post nr 5 : 97
 
 run #2
 
  Post nr 0 : 1337
- Post nr 1 : 59
- Post nr 2 : 18
- Post nr 3 : 27
- Post nr 4 : 24
- Post nr 5 : 78
-
-run #3
-
- Post nr 0 : 1337
- Post nr 1 : 11
- Post nr 2 : 13
- Post nr 3 : 46
- Post nr 4 : 19
- Post nr 5 : 65
+ Post nr 1 : 79
+ Post nr 2 : 89
+ Post nr 3 : 55
+ Post nr 4 : 76
+ Post nr 5 : 51
 ============================================================================================================
 exercise 3
 ============================================================================================================
+test manually
 ============================================================================================================
 exercise 4_1
 ============================================================================================================
-11111111ff
+9f
+af
+bf
+cf
+df
+ef
+ff
+f7
+fb
+ff
 ============================================================================================================
 exercise 4_2
 ============================================================================================================
+Name		Value
+engine_on	1
+gear_pos	7
+key_pos		3
+brake1		1
+brake2		1
+Name		Value
+engine_on	1
+gear_pos	7
+key_pos		0
+brake1		0
+brake2		1
+Name		Value
+engine_on	1
+gear_pos	7
+key_pos		2
+brake1		0
+brake2		1
+Name		Value
+engine_on	1
+gear_pos	7
+key_pos		2
+brake1		0
+brake2		1
+Name		Value
+engine_on	1
+gear_pos	7
+key_pos		1
+brake1		1
+brake2		1
+Name		Value
+engine_on	1
+gear_pos	7
+key_pos		1
+brake1		1
+brake2		1
+Name		Value
+engine_on	1
+gear_pos	7
+key_pos		3
+brake1		1
+brake2		1
+Name		Value
+engine_on	1
+gear_pos	7
+key_pos		3
+brake1		1
+brake2		1
+Name		Value
+engine_on	1
+gear_pos	6
+key_pos		3
+brake1		1
+brake2		1
+Name		Value
+engine_on	1
+gear_pos	5
+key_pos		3
+brake1		1
+brake2		1
 Name		Value
 engine_on	1
 gear_pos	7

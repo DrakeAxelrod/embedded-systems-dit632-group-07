@@ -15,8 +15,8 @@ typedef struct // identifier for the struct
   char pers_number[13]; // personal # array size based on yyyymmddnnnnc
 } PERSON;               // typedef name
 
-/* functions  declaration */
-void ensure_db_initialised();
+/* functions declaration */
+void ensure_db_initialized();
 void menu();
 void new_db();
 void create();
@@ -51,7 +51,6 @@ void menu()
   printf("> ");
   char choice = getchar(); // get a character from the input
   getchar();               // handle the 'Enter' (\n)
-  int return_code;         // for return code
   switch (choice)          // choice selections based on user input
   {
   case '1':                     // if user input is 1
@@ -93,10 +92,10 @@ void create()
 {
   ensure_db_initialized();                                      // check if db exists
   FILE *fp;                                                     // file struct and pointer
-  char firstname[20];                                           // first name chars with array size 20
-  char famname[20];                                             // family name chars with arrat size 20
-  char pers_number[13];                                         // personal # array size based on yyyymmddnnnnc
-  PERSON person = {NULL, NULL, NULL};                           // init person
+  // char firstname[20];                                           // first name chars with array size 20
+  // char famname[20];                                             // family name chars with arrat size 20
+  // char pers_number[13];                                         // personal # array size based on yyyymmddnnnnc
+  PERSON person; // = {NULL, NULL, NULL};                            // init person
   fflush(stdin);                                                // discards unconsumed buffered data
   fflush(stdout);                                               // discards output buffer
   printf("What is the first name? ");                           // prinnts to console
@@ -166,7 +165,7 @@ void search()
 }
 
 /* function to check if a database is initialized. If it's not we create one */
-void ensure_db_initialised()
+void ensure_db_initialized()
 {
   if (fopen(FILE_NAME, "rb") != NULL) // if the file doesn't exist
   {
