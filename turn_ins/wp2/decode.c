@@ -18,12 +18,19 @@ int main(int argc, char *argv[])
 {
     if (argc != 2) // the program should only accept 1 user provided argument, otherwise exit the program with an error code
         return 1;  // error exit code
+    if (strlen(argv[1]) == 2)
+    {
+        if (!((argv[1][0] <= 'f' && argv[1][0] >= 'a') && (argv[1][1] <= 'f' && argv[1][1] >= 'a')) || ((argv[1][0] <= 'F' && argv[1][0] >= 'A') && (argv[1][1] <= 'F' && argv[1][1] >= 'A')))
+        {
+            printf("Not a valid hexadecimal number\n");
+            exit(0);
+        }
+    }
 
     byte value = (int)strtol(argv[1], NULL, 16); // convert hex to decimal (in the form of a unsigned char byte)
-
-    if (strlen(argv[1]) != 2)
+    if (strlen(argv[1]) != 2) // if the string is not two characters
     {
-        if (value > 203 || value < 0)
+        if (value > 203 || value < 0 || atoi(argv[1]) > 99 || (value == 0 && argv[1] != 0))
         {
             printf("Invalid input.\n");
             return 0;
