@@ -89,10 +89,7 @@ void new_db()
 void create()
 {
   FILE *fp;                                                     // file struct and pointer
-  // char firstname[20];                                           // first name chars with array size 20
-  // char famname[20];                                             // family name chars with arrat size 20
-  // char pers_number[13];                                         // personal # array size based on yyyymmddnnnnc
-  PERSON person = {NULL, NULL, NULL};                            // init person
+  PERSON person = { NULL, NULL, NULL };                         // init person
   fflush(stdin);                                                // discards unconsumed buffered data
   fflush(stdout);                                               // discards output buffer
   printf("What is the first name? ");                           // prinnts to console
@@ -105,10 +102,17 @@ void create()
   fgets(person.pers_number, sizeof(person.pers_number), stdin); // prints to console
   person.pers_number[strlen(person.pers_number) - 1] = '\0';    // swap \n for \0
   print_person(person);                                         // Print the person struct
-  fp = fopen(FILE_NAME, "ab");                                  // open file in append binary mode
-  fwrite(&person, sizeof(PERSON), 1, fp);                       // write the person struct to the file
+  fp = fopen(FILE_NAME, "rb");                                  // open file in read binary mode to check if file exists
+  if (fp == NULL) {                                             // check if file pointer is null
+    new_db();                                                   // create db if file is null
+    fp = fopen(FILE_NAME, "ab");                                // open file in append binary mode
+  } else {                                                      // if file is not null
+    fclose(fp);                                                 // close the read mode
+    fp = fopen(FILE_NAME, "ab");                                // open the file in append mode now that we know the file exists
+  }
+  fwrite(&person, sizeof(person), 1, fp);                       // write the person struct to the file
+  getchar();                                                    // to handle the 'Enter'
   fclose(fp);                                                   // closes the file
-  getchar(); 
 }
 
 /* function closes the fileto print all persons from within the file */
