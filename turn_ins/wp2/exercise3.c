@@ -95,7 +95,7 @@ void create()
   // char firstname[20];                                           // first name chars with array size 20
   // char famname[20];                                             // family name chars with arrat size 20
   // char pers_number[13];                                         // personal # array size based on yyyymmddnnnnc
-  PERSON person; // = {NULL, NULL, NULL};                            // init person
+  PERSON person = {NULL, NULL, NULL};                            // init person
   fflush(stdin);                                                // discards unconsumed buffered data
   fflush(stdout);                                               // discards output buffer
   printf("What is the first name? ");                           // prinnts to console
@@ -109,8 +109,9 @@ void create()
   person.pers_number[strlen(person.pers_number) - 1] = '\0';    // swap \n for \0
   print_person(person);                                         // Print the person struct
   fp = fopen(FILE_NAME, "ab");                                  // open file in append binary mode
-  fwrite(&person, sizeof(person), 1, fp);                       // write the person struct to the file
+  fwrite(&person, sizeof(PERSON), 1, fp);                       // write the person struct to the file
   fclose(fp);                                                   // closes the file
+  getchar(); 
 }
 
 // /* function closes the fileto print all persons from within the file */
