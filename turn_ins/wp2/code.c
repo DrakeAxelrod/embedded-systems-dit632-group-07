@@ -24,7 +24,7 @@ int main(int argc, char const *argv[])
   {
     if (!check_input(argv[i], i)) // calls function to check the user input
     {
-      printf("There was an error with your arguments. The minimum value for each argument is 0, and the maximum value is: 1, 7, 3, 1, 1, respectively."); // error message
+      printf("There was an error with your arguments. The minimum value for each argument is 0, and the maximum value is: 1, 4, 3, 1, 1, respectively."); // error message
       exit(0);                                                                                                                                            // exit code
     }
   }
@@ -57,7 +57,7 @@ int check_input(char *input, int current)
   }
   else if (current == 2) // if it's the 2nd argument
   {
-    if (value >= 0 && value <= 7) // if the value is between 0 and 7
+    if (value >= 0 && value <= 4) // if the value is between 0 and 7
     {
       return 1; // return success
     }
