@@ -65,3 +65,4 @@ dkms.conf
 CMakeLists.txt
 cmake-build-debug
 .idea
+!LICENSE
