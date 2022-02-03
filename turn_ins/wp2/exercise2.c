@@ -21,33 +21,25 @@ typedef struct q // double linked list node
 // ##### Function declarations   #####
 REGTYPE *random_list(void);         // declaration of method
 REGTYPE *add_first(REGTYPE *, int); // declaration of method
+void *iterate_list(REGTYPE *, REGTYPE *); // declaration of method
+void *deallocate_list(REGTYPE *, REGTYPE *); // declaration of method
 
 //###### Main program #######
 int main(int argc, char *argv[])
 {
-    int nr = 0; // counter
-
     REGTYPE *act_post, *head = NULL; // init the head and act_post pointers
-// TODO - put while in external function. TEST
 
     srand(time(0));               // random seed
     head = random_list();         // call function to create initial list
-    head = add_first(head, 1337); // testing add_first
-    act_post = head;              // set the current position to head
-    while (act_post != 0)      // while the current position is not 0
-    {
-        printf("\n Post nr %d : %d", nr++, act_post->number); // print the nr and value of correspond node, and increment nr
-        act_post = act_post->next;                            // set the position to the next item in list
-    }
+    iterate_list(act_post, head); // iterate over the list and print the items
 
-    // --- Free the allocated memory  ---
-    // reset the position of act_post to head since act_post is at the end of list after first while loop
-    while ((act_post = head) != 0) //  while current position is not 0
-    {
-        head = act_post->next; // set to next position as you free each this is to make sure that you free everything
-        free(act_post);        // since the head is pointing to next we can free the previous head without losing the list
-    }
-    printf("\n"); // clean up lines
+    head = add_first(head, 1337); // Test adding the new item as the list's head 
+    iterate_list(act_post, head); // iterate over the list and print the items
+
+    head = add_first(head, 1234); // Test adding another item as the list's head 
+    iterate_list(act_post, head); // iterate over the list and print the items
+
+    deallocate_list(act_post, head); // free memory
     return 0; // exit code
 }
 
@@ -94,4 +86,31 @@ REGTYPE *add_first(REGTYPE *temp, int data)
     temp->prev = item; // set temp's previous variable (head passed as parameter) to the current item
     item->next = temp; // set item's next variable to the current head (parameter passed as temp)
     return item; // return item which is now the list's head
+}
+
+//==========================================================
+/* function to iterate over the list, print list items, and update the active position via pointer */
+void *iterate_list(REGTYPE *act_post, REGTYPE *head)
+{
+    int nr = 0;      // counter
+    act_post = head; // set the current position to head
+
+    while (act_post != NULL)      // while the current position is not null
+    {
+        printf("\n Post nr %d : %d", nr++, act_post->number); // print the nr and value of correspond node, and increment nr
+        act_post = act_post->next;                            // set the position to the next item in list
+    }
+    printf("\n"); // clean up lines
+}
+
+//==========================================================
+/* function to free the memory from allocated list items */
+void *deallocate_list(REGTYPE *act_post, REGTYPE *head)
+{
+    // reset the position of act_post to head since act_post is at the end of list after first while loop
+    while ((act_post = head) != NULL) //  while current position is not 0
+    {
+        head = act_post->next; // set to next position as you free each this is to make sure that you free everything
+        free(act_post);        // since the head is pointing to next we can free the previous head without losing the list
+    }
 }
