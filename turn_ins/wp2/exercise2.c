@@ -27,10 +27,18 @@ int main(int argc, char *argv[])
 {
     int nr = 0; // counter
 
-    REGTYPE *act_post, *head = 0; // init the head and act_post pointers
+    REGTYPE *act_post, *head = NULL; // init the head and act_post pointers
+// TODO - put while in external function. TEST
 
     srand(time(0));               // random seed
     head = random_list();         // call function to create initial list
+    act_post = head;              // set the current position to head
+    while (act_post != NULL)      // while the current position is not null
+    {
+        printf("\n Post nr %d : %d", nr++, act_post->number); // print the nr and value of correspond node, and increment nr
+        act_post = act_post->next;                            // set the position to the next item in list
+    }
+
     head = add_first(head, 1337); // testing add_first
     act_post = head;              // set the current position to head
     while (act_post != 0)      // while the current position is not 0
