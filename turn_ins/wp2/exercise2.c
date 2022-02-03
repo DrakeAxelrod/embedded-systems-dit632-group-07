@@ -27,13 +27,13 @@ int main(int argc, char *argv[])
 {
     int nr = 0; // counter
 
-    REGTYPE *act_post, *head = NULL; // init the head and act_post pointers
+    REGTYPE *act_post, *head = 0; // init the head and act_post pointers
 
     srand(time(0));               // random seed
     head = random_list();         // call function to create initial list
     head = add_first(head, 1337); // testing add_first
     act_post = head;              // set the current position to head
-    while (act_post != NULL)      // while the current position is not null
+    while (act_post != 0)      // while the current position is not 0
     {
         printf("\n Post nr %d : %d", nr++, act_post->number); // print the nr and value of correspond node, and increment nr
         act_post = act_post->next;                            // set the position to the next item in list
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 
     // --- Free the allocated memory  ---
     // reset the position of act_post to head since act_post is at the end of list after first while loop
-    while ((act_post = head) != NULL) //  while current position is not null
+    while ((act_post = head) != 0) //  while current position is not 0
     {
         head = act_post->next; // set to next position as you free each this is to make sure that you free everything
         free(act_post);        // since the head is pointing to next we can free the previous head without losing the list
@@ -77,6 +77,7 @@ REGTYPE *random_list(void)
                 old = old->next; // set old to the next item in the list
             }
             item->prev = old; // set the current item's previous variable to the old item
+            item->next = NULL;
             old->next = item; // set the end of the list's next to the current item
         }
         i++; // increment i
