@@ -16,14 +16,12 @@ typedef struct // identifier for the struct
 } PERSON;               // typedef name
 
 /* functions declaration */
-void ensure_db_initialized();
 void menu();
 void new_db();
 void create();
 void search();
 void print_all();
 void print_person(PERSON);
-void file_exists();
 
 /*
  * Main function in the program,
@@ -90,7 +88,6 @@ void new_db()
 // /* function to create an entry in the db */
 void create()
 {
-  // ensure_db_initialized();                                   // check if db exists
   FILE *fp;                                                     // file struct and pointer
   PERSON person = { NULL, NULL, NULL };                         // init person
   fflush(stdin);                                                // discards unconsumed buffered data
@@ -121,7 +118,6 @@ void create()
 /* function closes the fileto print all persons from within the file */
 void print_all()
 {
-  // ensure_db_initialized();                           // check for the db
   FILE *fp;                                          // file pointer
   PERSON person;                                     // person variable
   fp = fopen(FILE_NAME, "rb");                       // open the file in read binary mode
@@ -147,7 +143,6 @@ void print_person(PERSON person)
 /* function to search for a person from within the file */
 void search()
 {
-  // ensure_db_initialized();                           // function call to check if db  exists
   FILE *fp;                                          // create file pointer
   PERSON person;                                     // create a new struct of type PERSON
   char searchterm[20];                               // create a characteer array
@@ -177,13 +172,3 @@ void search()
   fclose(fp); // closes the file
 }
 
-/* function to check if a database is initialized. If it's not we create one */
-void ensure_db_initialized()
-{
-  FILE *fp;
-  if ((fp = fopen(FILE_NAME, "rb")) != NULL) // if the file doesn't exist
-  {
-    new_db(); // call for function to make a new database
-  }
-  fclose(fp); // close file
-}
