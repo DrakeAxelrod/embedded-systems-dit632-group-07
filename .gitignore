@@ -1,3 +1,12 @@
+# the following ignores everything without an extension
+# Ignore all
+*
+
+# Unignore all with extensions
+!*.*
+
+# Unignore all dirs
+!*/
 # Prerequisites
 *.d
 
@@ -56,9 +65,3 @@ dkms.conf
 CMakeLists.txt
 cmake-build-debug
 .idea
-./turn_ins/*
-!./turn_ins/*.c      #unignore .c files in each directory
-!./turn_ins/*.h      #unignore .h header files in each directory
-!./turn_ins/*.txt      
-!./turn_ins/*.h      
-!.gitignore #unignore .gitignore
