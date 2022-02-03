@@ -56,7 +56,9 @@ dkms.conf
 CMakeLists.txt
 cmake-build-debug
 .idea
-./turn_ins/*/**
-!*/*.c      #unignore .c files in each directory
-!*/*.h      #unignore .h header files in each directory
+./turn_ins/*
+!./turn_ins/*.c      #unignore .c files in each directory
+!./turn_ins/*.h      #unignore .h header files in each directory
+!./turn_ins/*.txt      
+!./turn_ins/*.h      
 !.gitignore #unignore .gitignore
