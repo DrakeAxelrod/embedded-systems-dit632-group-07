@@ -63,9 +63,9 @@ REGTYPE *random_list(void)
     {
         item = (REGTYPE *)malloc(sizeof(REGTYPE)); // create an item struct of type REGTYPE
         item->number = rand() % 100 + 1;           // set the item's number variable to a random integer
+        item->next = NULL;                         // initialise item's next variable to null
         if (top == NULL)                           // the first run of the loop
         {
-            item->next = NULL; // initialist item's next variable to null
             item->prev = NULL; // initialise item's previous variable to null
             top = item;        // set top to current item
         }
@@ -77,7 +77,6 @@ REGTYPE *random_list(void)
                 old = old->next; // set old to the next item in the list
             }
             item->prev = old; // set the current item's previous variable to the old item
-            item->next = NULL;
             old->next = item; // set the end of the list's next to the current item
         }
         i++; // increment i
