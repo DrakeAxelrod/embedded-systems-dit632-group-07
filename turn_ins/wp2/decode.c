@@ -16,24 +16,34 @@ void show_results(byte val);
 // Main function
 int main(int argc, char *argv[])
 {
-    if (argc != 2) // the program should only accept 1 user provided argument, otherwise exit the program with an error code
-        return 1;  // error exit code
-    if (strlen(argv[1]) == 2)
-    {
-        if (!((argv[1][0] <= 'f' && argv[1][0] >= 'a') && (argv[1][1] <= 'f' && argv[1][1] >= 'a')) || ((argv[1][0] <= 'F' && argv[1][0] >= 'A') && (argv[1][1] <= 'F' && argv[1][1] >= 'A')))
+    if (argc != 2)            // the program should only accept 1 user provided argument, otherwise exit the program with an error code
+        return 1;             // error exit code
+    if (strlen(argv[1]) == 2) // if the stringlength is 2 characters
+    {   
+        char one = argv[1][0]; // set a char variable to the first character of the string
+        char two = argv[1][1]; // set a char variable to the second character of the string
+        
+        // if check to see whether input is valid hexadecimal by checking for letters between a and f OR A and F OR 0 and 9
+        if (!(((one <= 'f' && one >= 'a') && (two <= 'f' && two >= 'a')) || ((one <= 'F' && one >= 'A') && (two <= 'F' && two >= 'A')) || ((one <= '9' && one >= '0') && (two <= '9' && two >= '0'))))
         {
-            printf("Not a valid hexadecimal number\n");
-            exit(0);
+            printf("Not a valid hexadecimal number\n"); // error message
+            return (0); // exit the program
         }
+    }
+    else if (strlen(argv[1]) > 2) // if the stringlength is more than 2 characters
+    {
+        printf("Please enter a hexadecimal with a max of 2 characters\n"); // error message
+        return (1); // error exit code
     }
 
     byte value = (int)strtol(argv[1], NULL, 16); // convert hex to decimal (in the form of a unsigned char byte)
-    if (strlen(argv[1]) != 2) // if the string is not two characters
+    if (strlen(argv[1]) == 1)                    // if the inut is one character
     {
-        if (value > 203 || value < 0 || atoi(argv[1]) > 99 || (value == 0 && argv[1] != 0))
+        // if check to see if the decimal value is lower than the max/min allowed. Also checks when ther is a letter outside of range with the 3rd OR.
+        if (value > 203 || value < 0 || (value == 0 && argv[1] != 0)) 
         {
-            printf("Invalid input.\n");
-            return 0;
+            printf("Invalid input.\n"); // error message
+            return 0; // exit the program
         }
     }
     show_results(value); // display the result
@@ -59,10 +69,10 @@ void show_results(byte val)
         if (bits[i] == '1')           // check if this index is 1
             gear_pos += bin_rep_gear; // if it is increment by bin_rep_gear
         bin_rep_gear /= 2;            // increment the binary value to represent the current value
-        if (gear_pos > 4)
+        if (gear_pos > 4) // if the gear_position is higher than the alllowed maximum
         {
-            printf("There was an error with your input. The gear_pos can have a maximum position of 4.\n");
-            exit(0);
+            printf("There was an error with your input. The gear_pos can have a maximum position of 4.\n"); // error message
+            exit(0); // exit the program
         }
     }
     for (int i = 3; i > 1; i--) // check the 0000 _ _ 00 positions in the byte
@@ -70,10 +80,10 @@ void show_results(byte val)
         if (bits[i] == '1')         // check if this index is 1
             key_pos += bin_rep_key; // if it is increment by bin_rep_key
         bin_rep_key /= 2;           // increment the binary value to represent the current value
-        if (key_pos > 2)
+        if (key_pos > 2) // if the key position is higher than the maximum alllowed
         {
-            printf("There was an error with your input. The key_pos can have a maximum position of 2.\n");
-            exit(0);
+            printf("There was an error with your input. The key_pos can have a maximum position of 2.\n"); // error message
+            exit(0); // exit the program
         }
     }
     printf("Name\t\tValue\n");          // Print the headings for the output
@@ -83,13 +93,3 @@ void show_results(byte val)
     printf("brake1\t\t%c\n", bits[1]);  // print the 1st brake's current state
     printf("brake2\t\t%c\n", bits[0]);  // print the 2nd brake's current state
 }
-
-// void convert_byte_to_bits(char val)
-// {
-//     char bits[8];
-//     for (int i = 0; i < 8; i++)
-//     {
-//         bits[i] = ("%c", (val & (1 << i)) ? '1' : '0');
-//     }
-//     return bits;
-// }
