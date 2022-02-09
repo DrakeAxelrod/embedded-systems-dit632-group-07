@@ -1,7 +1,7 @@
 // (C) Drake Axelrod, Vernita Gouws, Sicily Ann Brannen group: 07 (2022)
 // Work package 2
 // Exercise 2
-// Submission code : XXXXXX(provided by your TA - s)
+// Submission code : M60HVAJ7
 
 #include <stdio.h>  // functions for standard input/output
 #include <stdlib.h> // for standard library functions (malloc, srand)
