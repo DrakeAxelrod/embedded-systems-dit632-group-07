@@ -310,16 +310,7 @@ void setup() // setup function runs once in the beginning of the loop
 }
 
 void loop() // function that will iterate until program is ended
-{
-  for (int i = 7; i > 2; i--) // loop through the pins from 7 to 3
-  {
-    digitalWrite(i, LOW); // set the pins to LOW (turn the LEDs off)
-  }
-  
-  which_LEDS_to_switch_on(); // call function to see which LEDs should be turned on
-  
-  delay(1000); // wait 1sec
-}
+{}
 
 void readTemp() // function to read the temperature
 {
@@ -327,10 +318,15 @@ void readTemp() // function to read the temperature
   float voltage = temperature * 5.0; //  convert the temperature into voltage
   voltage /= 1024.0; // voltage is converted
   temp = (voltage - 0.55) * 100; // use the offset on voltage and 10mV per degree, to get temperature in celsius
+  which_LEDS_to_switch_on(); // call function to see which LEDs should be turned on
 }
 
 void which_LEDS_to_switch_on() // function to check which LEDs should be switched on
 {
+   for (int i = 7; i > 2; i--) // loop through the pins from 7 to 3
+  {
+    digitalWrite(i, LOW); // set the pins to LOW (turn the LEDs off)
+  }
   int pin = 7; // set the pin to the highest pin in the range
   for (int i = 0; i < 5; i++) // loop through 5 pins
   {
