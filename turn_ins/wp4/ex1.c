@@ -1,7 +1,7 @@
 // (C) Drake Axelrod, Vernita Gouws, Sicily Ann Brannen group: 07 (2022)
 // Work package 4
 // Exercise 1
-// Submission code:
+// Submission code: BJGIKTJU
 
 #include <Arduino.h>
 #include <TimerOne.h>
@@ -304,12 +304,11 @@ void setup() // setup function runs once in the beginning of the loop
   pinMode(4, OUTPUT); // set pin 7 as an output to an LED
   pinMode(3, OUTPUT); // set pin 7 as an output to an LED
   Timer1.initialize(100000); // initialise the timer
-
   Serial.begin(9600); // activate the serial monitor
   Timer1.attachInterrupt( readTemp ); // set an interrupt on the timer, with a callback function that will read the temperature
 }
 
-void loop() // function that will iterate until program is ended
+void loop() // empty loop function as we want to show that our interrupt works correctly
 {}
 
 void readTemp() // function to read the temperature

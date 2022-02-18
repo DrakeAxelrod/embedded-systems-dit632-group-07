@@ -1,7 +1,7 @@
 // (C) Drake Axelrod, Vernita Gouws, Sicily Ann Brannen group: 07 (2022)
 // Work package 4
 // Exercise 2
-// Submission code:
+// Submission code: BJGIKTJU
 
 // ================================================================================================================================= //
 // ========================================================= START LIBRARY ========================================================= //
@@ -492,7 +492,7 @@ void setup()
   hours.attach(7);   // attaches the servo on pin 12
 }
 
-void loop() {} // do nothing
+void loop() {} // do nothing to show that our timer works correctly
 
 // updates the respective servos and increments the var representations of sec,min,hrs
 void updateTime()
