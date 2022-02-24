@@ -31,3 +31,26 @@ void loop ()
     digitalWrite (LED, HIGH);
   // loop doing nothing 
 }
+
+
+// sudo chmod a+rw /dev/ttyACM0 - permission to upload the sketch
+static int state = 0;
+void setup() // initialize the program
+{
+  pinMode(0, INPUT); // set the pin 5 to input
+  pinMode(7, OUTPUT); // set the pin 7 to output
+  pinMode(3, OUTPUT); // set the pin 3 to output
+  attachInterrupt(digitalPinToInterrupt(7), blink, CHANGE);
+  Serial.begin(9600);
+}
+
+void loop() {
+  digitalWrite(3, digitalRead(0) == LOW ? HIGH : LOW);
+  blink();
+}
+
+void blink() {
+  delay(1000);
+  digitalWrite(7, state); // change the voltage to high for pin 13
+  state = !state;
+}
