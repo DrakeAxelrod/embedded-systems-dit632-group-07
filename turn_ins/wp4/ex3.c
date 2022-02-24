@@ -1,17 +1,15 @@
 // (C) Drake Axelrod, Vernita Gouws, Sicily Ann Brannen group: 07 (2022)
 // Work package 4
 // Exercise 3
-// Submission code: 
+// Submission code: BJGIKTJU
 
 #include <Arduino.h> // for arduino functionality
 #include <Adafruit_NeoPixel.h> // header for the led ring functionality
+#include TimerOne.h
 
 const int neoPin = 5; // the pin number of the neopixel strip
 const int numLeds = 16; // number of the leds
 int tempC; // temperature in celsius
-int red = 15; // rgb red value
-int green = 25; // rgb green value
-int blue = 35; // rgb blue value
 
 Adafruit_NeoPixel disc = Adafruit_NeoPixel(numLeds, neoPin, NEO_GRB + NEO_KHZ800); // object for led ring
 
@@ -22,16 +20,17 @@ float range[] = {-30.0, -20.0, -10.0, 0.0, 10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 7
 void setup()
 {
   // put your setup code here, to run once:
-  pinMode(3, OUTPUT); // set digital pin 3 to output
+  pinMode(neoPin, OUTPUT); // set digital pin 5 to output
   pinMode(A0, INPUT); // set analogue pin 0 to input
   disc.begin(); //to start the led ring
   Serial.begin(9600); // initializes serial
   disc.setBrightness(120); // half brightness
+  Timer1.initialize(100000); // initialise the timer with 100 milliseconds
+  Timer1.attachInterrupt( checkTemp ); // set an interrupt on the timer, with a callback function that will read the temperature
 }
 
-void loop() // round and round goes the carousel weeeeee!
+void loop() // function that will iterate until the program ends
 {
-  checkTemp(); // call function to check the temperature
   setColors(); // call function to set the colors
   delay(100); // delay (100 arbitrarily chosen)
 }
@@ -52,28 +51,24 @@ void setColors()// function to set the colors on the LED ring
     {
       disc.setPixelColor(i, getColor((i * 16) & 255)); // set the color to display on the LED ring
       disc.show(); // re-renders the leds on the ring
-      if (i == 15)
-      {
-        digitalWrite(3, HIGH);
-      }
     }
     else // else if its in the wrong range
     {
       disc.setPixelColor(i, disc.Color(0, 0, 0)); // turns off the ring's lights (all rgb values 0)
     }
   }
-  // if (tempC >= 120) // if the temperature is greater than 120 c
-  // {
-  //   digitalWrite(3, HIGH); // turn on LED
-  // }
-  // else // else if the temperature is not >= 120 c
-  // {
-  //   digitalWrite(3, LOW); // turn off LED
-  // }
+  if (tempC >= 120) // if the temperature is greater than 120 c
+  {
+    digitalWrite(neoPin, HIGH); // turn on LED
+  }
+  else // else if the temperature is not >= 120 c
+  {
+    digitalWrite(neoPin, LOW); // turn off LED
+  }
 }
 
 
-uint32_t getColor(byte color) // function for getting rainbow colours
+uint32_t getColor(byte color) // function for getting getting the colours in hex
 {
   /* function to get rainbow colours for the Neopixel ring by mattnupen on codebender. */
   if (color < 85) // if the value is less than 85
@@ -82,12 +77,12 @@ uint32_t getColor(byte color) // function for getting rainbow colours
   }
   else if (color < 170) // if the value is between 85 and 170
   {
-    color -= 85;
+    color -= 85; // decresae the value so that it the equation will stay in range
     return disc.Color(255 - color * 3, 0, color * 3); // decrease the red, set green to 0, and increase the blue
   }
   else // if the value is between 170 and 255
   {
-    color -= 170; // value is equal to the value minus 170
+    color -= 170; // decresae the value so that it the equation will stay in range
     return disc.Color(0, color * 3, 255 - color * 3); // set red to 0, increase the green, and decrease the blue
   }
 }

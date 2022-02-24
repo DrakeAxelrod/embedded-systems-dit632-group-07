@@ -1,7 +1,7 @@
 // (C) Drake Axelrod, Vernita Gouws, Sicily Ann Brannen group: 07 (2022)
 // Work package 4
 // Exercise 1
-// Submission code:
+// Submission code: BJGIKTJU
 
 #include <Arduino.h>
 #include <TimerOne.h>
@@ -304,22 +304,12 @@ void setup() // setup function runs once in the beginning of the loop
   pinMode(4, OUTPUT); // set pin 7 as an output to an LED
   pinMode(3, OUTPUT); // set pin 7 as an output to an LED
   Timer1.initialize(100000); // initialise the timer
-
   Serial.begin(9600); // activate the serial monitor
   Timer1.attachInterrupt( readTemp ); // set an interrupt on the timer, with a callback function that will read the temperature
 }
 
-void loop() // function that will iterate until program is ended
-{
-  for (int i = 7; i > 2; i--) // loop through the pins from 7 to 3
-  {
-    digitalWrite(i, LOW); // set the pins to LOW (turn the LEDs off)
-  }
-  
-  which_LEDS_to_switch_on(); // call function to see which LEDs should be turned on
-  
-  delay(1000); // wait 1sec
-}
+void loop() // empty loop function as we want to show that our interrupt works correctly
+{}
 
 void readTemp() // function to read the temperature
 {
@@ -327,10 +317,15 @@ void readTemp() // function to read the temperature
   float voltage = temperature * 5.0; //  convert the temperature into voltage
   voltage /= 1024.0; // voltage is converted
   temp = (voltage - 0.55) * 100; // use the offset on voltage and 10mV per degree, to get temperature in celsius
+  which_LEDS_to_switch_on(); // call function to see which LEDs should be turned on
 }
 
 void which_LEDS_to_switch_on() // function to check which LEDs should be switched on
 {
+   for (int i = 7; i > 2; i--) // loop through the pins from 7 to 3
+  {
+    digitalWrite(i, LOW); // set the pins to LOW (turn the LEDs off)
+  }
   int pin = 7; // set the pin to the highest pin in the range
   for (int i = 0; i < 5; i++) // loop through 5 pins
   {

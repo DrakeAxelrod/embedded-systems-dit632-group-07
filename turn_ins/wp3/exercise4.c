@@ -1,10 +1,10 @@
 #include <stdio.h>
-#include <Arduino.h>
+#include <Arduino.h> // header file for Arduino functions
 
-define handle_keypad_input();
-define is_low(int);
-define handle_pin(int, char);
-define handle_row(char *);
+void handle_keypad_input();
+int is_low(int);
+void handle_pin(int, char);
+void handle_row(char *);
 
 void setup() // setup function - runs once on startup
 {
