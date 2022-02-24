@@ -1,4 +1,9 @@
-#include <stdio.h>
+// (C) Drake Axelrod, Vernita Gouws, Sicily Ann Brannen group: 07 (2022)
+// Work package 3
+// Exercise 2
+// Submission code : LLB027A2
+
+#include <stdio.h>   // standard lib
 #include <Arduino.h> // header file for Arduino functions
 
 int calculate_light_intensity(int); // define function
@@ -13,21 +18,23 @@ void setup() // initialize the program
     pinMode(A0, INPUT); // sets analog pin A0 to input mode
     Serial.begin(9600); // opens the serial port
     pinMode(A3, INPUT); // sets analog pin A3 to input mode
-    pinMode(2, OUTPUT); // sets pin 2 to output mode for the blue LED
-    pinMode(3, OUTPUT); // sets pin 3 to output mode for the green LED
-    pinMode(4, OUTPUT); // sets pin 4 to output mode for the red LED
+    pinMode(4, OUTPUT); // sets pin 2 to output mode for the blue LED
+    pinMode(5, OUTPUT); // sets pin 3 to output mode for the green LED
+    pinMode(6, OUTPUT); // sets pin 4 to output mode for the red LED
 }
 
 void loop() // function that will iterate while the program is running
 { 
   int temperature = analogRead(A0); // reads temperature from analog pin A0
   int light = analogRead(A3); // reads temperature from analog pin A3
+  Serial.print("light ");
+  Serial.println(light);
   float voltage = temperature * (5.0 / 1024); // convert analog to voltage
-  tempC = (voltage - 0.55) * 100 ;  // remove offset, then convert using 10mV per degree               
+  tempC = (voltage - 1.45) * 100 ;  // remove offset, then convert using 10mV per degree               
  
   lightV = calculate_light_intensity(light); // set lightV to the return of the function
   //consider the floats in the temperature
-  
+   
     digitalWrite(pin, LOW); // reset the pin previously lit up
     if (lightV == 0) // if light is 0
     {
@@ -47,26 +54,33 @@ void loop() // function that will iterate while the program is running
     }
     // Delay a little bit to improve simulation performance
     digitalWrite(pin, HIGH); // turn on the correct LED
+    Serial.print("tempC ");
+    Serial.println(tempC);
+    Serial.print("lightV ");
+    Serial.println(lightV);
+    Serial.print("pin ");
+    Serial.println(pin);
     delay(500); // wait 0.5 seconds in between loops
 }
 
 int calculate_light_intensity(int reading) // function to convert the light reading to a value between 0 and 100
 {
-    return map(reading, 6, 679, 0, 100); // returns the converted value
+
+    return map(reading, 14, 250, 0, 100); // returns the converted value
 }
 
 int determine_light(float value, int min, int max) { // function to determine which LED will be lit
     if (value <= min) // if the temperature is below min
-        return 2; // return pin 2 (blue LED)
+        return 4; // return pin 2 (blue LED)
     else if (value >= max) // if the temperature is above max
-        return 4; // return pin 4 (red LED)
+        return 6; // return pin 4 (red LED)
     else // if the temperature is in the correct range
-        return 3; // return pin 3 (green LED)
+        return 5; // return pin 3 (green LED)
 }
 
 
 /* Table to show the correct ranges 
-< -12 °C   	0%
--12 °C - 0 °C  	1% - 20%
-0 °C - 20 °C	21% - 60%
->= 21 °C		61% - 100% */
+< -12 °C     0%
+-12 °C - 0 °C   1% - 20%
+0 °C - 20 °C  21% - 60%
+>= 21 °C    61% - 100% */
