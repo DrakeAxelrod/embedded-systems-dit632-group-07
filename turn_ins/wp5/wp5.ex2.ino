@@ -1,3 +1,9 @@
+// (C) Drake Axelrod, Vernita Gouws, Sicily Ann Brannen group: 07 (2022)
+// Work package 5
+// Exercise 2
+// Submission code :
+// modified by Drake Axelrod, Vernita Gouws, Silicly Ann Brannen for wp5
+// taken from wp3
 #include <TimerOne.h> // interrupt library
 
 float temperature = 0; // temp variable
