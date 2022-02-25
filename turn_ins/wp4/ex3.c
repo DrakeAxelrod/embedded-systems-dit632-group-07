@@ -5,7 +5,7 @@
 
 #include <Arduino.h> // for arduino functionality
 #include <Adafruit_NeoPixel.h> // header for the led ring functionality
-#include TimerOne.h
+#include "TimerOne.h"
 
 const int neoPin = 5; // the pin number of the neopixel strip
 const int numLeds = 16; // number of the leds
