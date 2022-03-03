@@ -20,6 +20,8 @@ int e = 0; // error
 int a = 0; // a-encoder signal
 int b = 0; // b-encoder signal
 
+
+/**/
 void setup()
 {
 
