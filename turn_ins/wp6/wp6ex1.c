@@ -1,4 +1,9 @@
 // WP 6 Exercise 1 Template DIT 632
+// (C) Drake Axelrod, Vernita Gouws, Sicily Ann Brannen group: 07 (2022)
+// Work package 6
+// Exercise 1
+// Submission code: MYESOG6S
+
 #include <Arduino.h>
 
 #define ENCA 2
@@ -21,11 +26,11 @@ int a = 0; // a-encoder signal
 int b = 0; // b-encoder signal
 
 
-/**/
+/* function to initialise the program - is executed once */
 void setup()
 {
 
-  Serial.begin(9600);
+  Serial.begin(9600); // initialise the serial monitor
   pinMode(ENCA, INPUT_PULLUP);
   pinMode(ENCB, INPUT_PULLUP);
   pinMode(PWM1, OUTPUT);
@@ -40,6 +45,7 @@ void setup()
   analogWrite(PWM1, 10);
 }
 
+/* function that iterates until program is terminated*/
 void loop()
 {
   // Stop the motor, but not to zero because then TinkerCad dies....
@@ -69,7 +75,7 @@ void loop()
   // Calculate initial error
   e = degtarget - deg;
   // ========== Added ========== //
-  Serial.print("The current error is: ");     // print the error
+  Serial.print("The current error: ");     // print the error
   Serial.print(e);                            // print the error
   Serial.print("\n");                         // print the error
   // =========================== //
@@ -80,7 +86,7 @@ void loop()
     // Map current position into degrees
     deg = map(pos, 0, 2299, 0, 359);
     // ========== Added ========== //
-    Serial.print("The current degrees is: "); // print the degrees
+    Serial.print("The current degrees: "); // print the degrees
     Serial.print(e);                          // print the degrees
     Serial.print("\n");                       // print the degrees
     // =========================== //

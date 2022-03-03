@@ -1,3 +1,8 @@
+// (C) Drake Axelrod, Vernita Gouws, Sicily Ann Brannen group: 07 (2022)
+// Work package 6
+// Exercise 3
+// Submission code: MYESOG6S
+
 #include <Arduino.h>
 #include <Keypad.h>
 #include <Adafruit_NeoPixel.h>
