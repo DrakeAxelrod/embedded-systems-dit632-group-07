@@ -28,12 +28,9 @@ void setup()
   pinMode(ENCB, INPUT_PULLUP);
   pinMode(PWM1, OUTPUT);
   pinMode(PWM2, OUTPUT);
-
-  /*
-  ==> TODO TODO TODO
-  ATTACH INTERRUPT HERE.
-  */
-  attachInterrupt(digitalPinToInterrupt(ENCB), ISR_readEncoder, RISING);
+  // ========== Added ========== //
+  attachInterrupt(digitalPinToInterrupt(ENCB), ISR_readEncoder, RISING); // Attach interrupt to ISR function on rising on channel B
+  // =========================== //
   // attachInterrupt(digitalPinToInterrupt(5), ISR_readEncoder, CHANGE);
   //  Start the motor, just a tiny little bit because otherwise TinkerCad dies....
   analogWrite(PWM2, 10);
@@ -64,20 +61,27 @@ void loop()
   Serial.print("The current position is: ");
   Serial.print(deg);
   Serial.print("\n");
-
   // Get input
   degtarget = getInput();
 
   // Calculate initial error
   e = degtarget - deg;
-
+  // ========== Added ========== //
+  Serial.print("The current error is: ");     // print the error
+  Serial.print(e);                            // print the error
+  Serial.print("\n");                         // print the error
+  // =========================== //
   // Loop until error is zero
   while (e)
   {
 
     // Map current position into degrees
     deg = map(pos, 0, 2299, 0, 359);
-
+    // ========== Added ========== //
+    Serial.print("The current degrees is: "); // print the degrees
+    Serial.print(e);                          // print the degrees
+    Serial.print("\n");                       // print the degrees
+    // =========================== //
     // Get necessary speed signal
     speed = getAction(e);
 
@@ -128,12 +132,9 @@ int getInput()
 
 int getAction(int error)
 {
-  /*
-  ==> TODO TODO TODO
-  */
-
-  u_out = kp * e;
-
+  // ========== Added ========== //
+  u_out = kp * e; // given algorithm from wp6ex1
+  // =========================== //
   if (u_out > 254)
   { // u_out cannot be more than 255...
     return 255;
@@ -148,5 +149,7 @@ int getAction(int error)
 
 void ISR_readEncoder()
 {
-  digitalRead(ENCA) != LOW ? pos++ : pos--;
+  // ========== Added ========== //
+  digitalRead(ENCA) != LOW ? pos++ : pos--; // we read a since we attach to chanB then we inc or dec depending on low or high
+  // =========================== //
 }
